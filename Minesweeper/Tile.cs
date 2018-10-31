@@ -43,6 +43,9 @@ namespace Minesweeper
 
         private void OnMouseClick(object sender, MouseEventArgs e)
         {
+            if (IsShown)
+                return;
+
             switch (e.Button)
             {
                 //Reveal
@@ -65,9 +68,6 @@ namespace Minesweeper
                 }
                 case MouseButtons.Right:
                 {
-                    if(IsShown)
-                        return;
-
                     //Cycle flags
                     switch (TileState)
                     {
